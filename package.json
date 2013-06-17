@@ -1,0 +1,23 @@
+{
+  "name": "easy-deferred",
+  "description": "deferred library",
+  "author": "Kirill Fomichev <fanatid@ya.ru>",
+  "homepage": "http://fanatid.github.io/easy-deferred/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanatid/easy-deferred.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fanatid/easy-deferred/issues"
+  },
+  "main": "./index.js",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "keywords": [
+    "deferred"
+  ],
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}
