@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Easy-deferred by fanatid</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/fanatid/easy-deferred">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/fanatid/easy-deferred/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/fanatid/easy-deferred/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Easy-deferred</h1>
+          <p>JavaScript deferred library</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/fanatid">fanatid</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="easy-deferred" class="anchor" href="#easy-deferred"><span class="octicon octicon-link"></span></a>Easy deferred</h1>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>npm install easy-deferred
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code>var Deferred = require('easy-deferred');
+var fs = require('fs');
+
+var d = new Deferred();
+d.then(function(data) {
+  console.log('Success: ' + data)
+}, function(error) {
+  console.log('Error: ' + error)
+})
+fs.readFile('/etc/shadow', function (err, data) {
+  if (err)
+    d.reject(err);
+  else
+    d.resolve(data);
+});
+</code></pre>
+
+<h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+
+<ul>
+<li><code>new Deferred()</code></li>
+<li><code>Deferred.all()</code></li>
+<li><code>deferred.isResolved</code></li>
+<li><code>deferred.isRejected</code></li>
+<li><code>deferred.resolve()</code></li>
+<li><code>deferred.reject()</code></li>
+<li><code>deferred.then()</code></li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
